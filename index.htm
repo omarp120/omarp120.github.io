@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- saved from url=(0155)file:///Users/omarpineda/Desktop/CUNY%20SPS%20MS%20Data%20Science/DATA608%20Knowledge%20and%20Visual%20Analytics/CUNY_DATA_608-master/module5/module5v4.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Module 5</title></head><body>
+    <h1>DATA608 Spring 2020 Module 5 Omar Pineda</h1>
+
+<h2>Submit a word to reverse here:</h2>
+
+<input type="text" id="str" value="">
+
+
+
+<button onclick="stringReverse()">Enter</button>
+
+<p id="reversed"></p>
+
+<script>
+function stringReverse() {
+    var word = document.getElementById("str").value;
+    var word2 = word.split('').reverse().join('')
+    document.getElementById("reversed").innerHTML = word2;     
+} 
+</script>
+
+<br> <br>
+
+<h2>Submit a number to get its Multiplication Table:</h2>
+
+<input type="number" id="num">
+<button onclick="multTable()">Enter</button>
+<p id="multiple"></p>
+
+<script>
+function create_table(){
+var x = document.getElementById("num").value;
+var mult = []
+for(var i = 1; i < 20 + 1; i++){
+	mult.push(i*x);
+ }
+var table = "<table border=2>";
+table += "<tr>";
+for (var j = 0; j < mult.length; j++) {
+  table += "<td>" + mult[j] + "</td>";
+  if ((j + 1) % 4 == 0) {
+    table += "</tr><tr>";
+  }
+}
+table += "</tr>";
+table += "</table>";
+document.body.innerHTML = table;
+return table;
+}
+
+function multTable(){
+    var tbl = document.getElementById("multiple");
+    tbl.innerHTML = create_table();
+}
+</script>
+
+
+
+</body></html>
